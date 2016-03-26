@@ -1,0 +1,9 @@
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityCodeFirst.dll.config
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityCodeFirst.dll
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityCodeFirst.pdb
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityFramework.dll
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityFramework.xml
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\obj\Debug\EntityCodeFirst.dll
+C:\Users\Sanan\documents\visual studio 2015\Projects\WPFTest\EntityCodeFirst\obj\Debug\EntityCodeFirst.pdb

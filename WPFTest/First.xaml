@@ -1,0 +1,62 @@
+﻿<controls:MetroWindow x:Class="WPFTest.First"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTest"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+                      
+        BorderThickness="0" 
+        GlowBrush="Black"
+        ResizeMode="NoResize"
+
+        Background="White"  
+        
+                      
+        WindowTransitionsEnabled="True"
+        WindowStartupLocation="CenterScreen"
+        IsMaxRestoreButtonEnabled="False"
+        Title="Главная страница" Height="700" Width="1110"
+        MinHeight="600" MinWidth="1010" Closing="MetroWindow_Closing">
+
+    <Window.Resources>
+        
+
+        <Style x:Key="SearchTile" TargetType="controls:Tile" >
+            <Setter Property="Background" Value="#9856a3" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#12FF12" />
+                    <!--<Setter Property="FocusVisualStyle" Value="asda"></Setter>-->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <controls:Tile x:Name="tile3" AllowDrop="True" Title="Самолеты"  TitleFontSize="24"  HorizontalAlignment="Left" Margin="659,130,0,0" Background="#00B8D4" VerticalAlignment="Top" Height="431" Width="279" Click="tile3_Click" MouseEnter="tile3_MouseEnter">
+            <Image x:Name="image" Height="186" Width="178" Source="Icons/Plane3.png" RenderTransformOrigin="0.551,0.511"/>
+        </controls:Tile>
+
+        <controls:Tile x:Name="tile2" AllowDrop="True" Title="Оборудование" TitleFontSize="24" Background="#EC407A" HorizontalAlignment="Left" Margin="134,377,0,0" VerticalAlignment="Top" Width="504" Height="184" Click="tile2_Click">
+            <Image x:Name="image3" Source="Icons/equip.png" Height="134" Width="228" RenderTransformOrigin="0.429,0.46"/>
+        </controls:Tile>
+        <controls:Tile x:Name="tile1" AllowDrop="True" Title="Экипаж" TitleFontSize="24" Background="#7CB342" HorizontalAlignment="Left" Margin="395,130,0,0" VerticalAlignment="Top" Height="228" Width="243" Click="tile1_Click">
+            <Image x:Name="image2" Source="Icons/crew.png" Height="136" Width="164"/>
+        </controls:Tile>
+        <controls:Tile x:Name="tile"  Title="Рейсы" TitleFontSize="24"  Background="#0288D1" VerticalAlignment="Top" Width="243" Height="228" FontSize="33.333" ToolTip="Рейсы" HorizontalAlignment="Left" FontFamily="Consolas" Click="tile_Click" Style="{StaticResource SearchTile}" Margin="134,130,0,0">
+            <Image x:Name="image1" Source="Icons/suit.png" Height="136" Width="164"/>
+        </controls:Tile>
+
+        <Label x:Name="label" FontSize="35" Foreground="#FFEC08EC" HorizontalAlignment="Left" Margin="70,33,0,0" VerticalAlignment="Top" Content="Выберите раздел:" Background="White"/>
+    </Grid>
+
+
+
+
+
+
+
+</controls:MetroWindow>
