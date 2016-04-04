@@ -4,8 +4,8 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows;
+using MessageBox = WPFMessageBox.MessageBox;
 
-using WPFTest.EFClasses;
 
 
 namespace WPFTest
@@ -37,6 +37,7 @@ namespace WPFTest
             db.Flights.Load();
             db.Crews.Load();
 
+        
             dataGrid1.ItemsSource = db.Equipments.Local.ToBindingList();
             dataGrid1.Items.Refresh();
 
@@ -100,7 +101,10 @@ namespace WPFTest
 
                 db.Equipments.Add(equipment);
                 db.SaveChanges();
-            
+
+
+                MessageBox.ShowInformation(this,"Добавлено новое оборудование!!!");
+
         }
         // Изменить запись (Оборудование)
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -178,22 +182,36 @@ namespace WPFTest
                 db.SaveChanges();
 
                 RefreshData();
+
+                MessageBox.ShowInformation(this, "Оборудование было изменено!!!");
+
+
             }
         }
         // Удалить запись (Оборудование)
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (dataGrid1.SelectedIndex > 0)
-            {
-                Equipment eq = dataGrid1.SelectedItem as Equipment;
-                //int index = (int) eq.ID;
+            MessageBoxResult result = MessageBox.ShowQuestion(this, "Удалить выбранное оборудование?","Вы",true);
 
-                db.Equipments.Remove(eq);
-                db.SaveChanges();
+            if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No)
+            {
+
+                return;
+            }
+
+            if (dataGrid1.SelectedIndex >= 0)
+            {
+                    Equipment eq = dataGrid1.SelectedItem as Equipment;
+                    //int index = (int) eq.ID;
+
+                    db.Equipments.Remove(eq);
+                    db.SaveChanges();
+
+                    MessageBox.ShowWarning(this, "Оборудование было удалено!!!");
             }
         }
 
-                     /*-----------------------САМОЛЕТЫ-----------------------*/
+                    /*-----------------------САМОЛЕТЫ-----------------------*/
 
         // Добавить новую (Самолеты)
         private void addAB_Click(object sender, RoutedEventArgs e)
@@ -237,7 +255,8 @@ namespace WPFTest
             db.AirPlanes.Add(airPlane);
             db.SaveChanges();
 
-            
+            MessageBox.ShowInformation(this, "Добавлен новый самолет!!!");
+
         }
         // Изменить запись (Самолеты)
         private void editAB_Click(object sender, RoutedEventArgs e)
@@ -293,19 +312,30 @@ namespace WPFTest
                 db.SaveChanges();
 
                 RefreshData();
+
+                MessageBox.ShowInformation(this, "Самолет был изменен!!!");
             }
            
         }
         // Удаление (Самолеты)
         private void delAB_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.ShowQuestion(this, "Удалить выбранный смолет?", "Вы", true);
 
-            if (dataGrid2.SelectedIndex > 0)
+            if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No)
+            {
+                return;
+            }
+
+            if (dataGrid2.SelectedIndex >= 0)
             {
                 AirPlane airPlane = dataGrid2.SelectedItem as AirPlane;
-                
+
+                db.Flights.RemoveRange(airPlane.Flights);
                 db.AirPlanes.Remove(airPlane);
                 db.SaveChanges();
+
+                MessageBox.ShowWarning(this, "Самолет был удален!!!");
             }
         }
 
@@ -355,6 +385,8 @@ namespace WPFTest
            
             db.Flights.Add(flight);
             db.SaveChanges();
+
+            MessageBox.ShowWarning(this, "Добавлен новый рейс!!!");
 
 
         }
@@ -421,18 +453,29 @@ namespace WPFTest
                 db.SaveChanges();
 
                 RefreshData();
+
+                MessageBox.ShowWarning(this, "Рейс был изменен!!!");
             }
             
         }
         // Удаление рейса
         private void delFB_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.ShowQuestion(this, "Удалить выбранный рейс?", "Вы", true);
+
+            if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No)
+            {
+                return;
+            }
+
             if (dataGrid3.SelectedIndex >= 0)
             {
                 Flight flight = dataGrid3.SelectedItem as Flight;
 
                 db.Flights.Remove(flight);
                 db.SaveChanges();
+
+                MessageBox.ShowWarning(this, "Рейс был удален!!!");
             }
         }
 
@@ -464,10 +507,14 @@ namespace WPFTest
 
             Crew crew = new Crew();
             crew.HeadOfCrew = addCrew.textBox1.Text;
+            crew.SecondPilot = addCrew.textBox3.Text;
+            crew.HeadOfStuard = addCrew.textBox4.Text;
             crew.Amount = int.Parse(addCrew.textBox2.Text);
 
             db.Crews.Add(crew);
             db.SaveChanges();
+
+            MessageBox.ShowWarning(this, "Добавлен новый экипаж!!!");
 
         }
         // Изменение экипажа
@@ -480,6 +527,8 @@ namespace WPFTest
                 AddCrew addCrew = new AddCrew();
 
                 addCrew.textBox1.Text = crew.HeadOfCrew;
+                addCrew.textBox3.Text = crew.SecondPilot;
+                addCrew.textBox4.Text = crew.HeadOfStuard;
                 addCrew.textBox2.Text = crew.Amount.ToString();
 
 
@@ -499,8 +548,10 @@ namespace WPFTest
                 if (result == System.Windows.Forms.DialogResult.Cancel)
                     return;
 
-                
+
                 crew.HeadOfCrew = addCrew.textBox1.Text;
+                crew.SecondPilot = addCrew.textBox3.Text;
+                crew.HeadOfStuard = addCrew.textBox4.Text;
                 crew.Amount = int.Parse(addCrew.textBox2.Text);
 
 
@@ -509,17 +560,29 @@ namespace WPFTest
 
                 RefreshData();
 
+                MessageBox.ShowWarning(this, "Экипаж был изменен!!!");
             }
         }
         // Удаление экипажа
         private void delCB_Click(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.ShowQuestion(this, "Удалить выбранный экипаж?", "Вы", true);
+
+            if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No)
+            {
+                return;
+            }
+
+
             if (dataGrid4.SelectedIndex >= 0)
             {
                 Crew crew = dataGrid4.SelectedItem as Crew;
 
+                db.Flights.RemoveRange(crew.Flights);
                 db.Crews.Remove(crew);
                 db.SaveChanges();
+
+                MessageBox.ShowWarning(this, "Экипаж был удален!!!");
             }
         }
     }

@@ -11,16 +11,20 @@
         Icon="Icons/Plane3.png"
         ResizeMode="NoResize"
     
-        Title="Новый экипаж" Height="323.377" Width="528.097">
+        Title="Новый экипаж" Height="434.627" Width="528.097">
 
-    <Grid HorizontalAlignment="Right"  Width="518">
+    <Grid HorizontalAlignment="Right"  Width="518" >
 
         <Label x:Name="label1" FontFamily="Consolas" FontSize="18" Content="Капитан экипажа" HorizontalAlignment="Left" Margin="72,64,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
-        <Label x:Name="label2" FontFamily="Consolas" FontSize="18" Content="Количество состава" HorizontalAlignment="Left" Margin="42,126,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
-        <TextBox x:Name="textBox1" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="224"/>
-        <Button x:Name="button" Content="OK" FontSize="18" local:ButtonHelper.DialogResult="True"  HorizontalAlignment="Left" Margin="207,203,0,0" VerticalAlignment="Top" Width="112" />
-        <Button x:Name="button1" Content="Отмена" FontSize="18" IsCancel="True" HorizontalAlignment="Left" Margin="382,203,0,0" VerticalAlignment="Top" Width="109"/>
-        <TextBox x:Name="textBox2" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,126,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
+        <Label x:Name="label2" FontFamily="Consolas" FontSize="18" Content="Количество состава" HorizontalAlignment="Left" Margin="42,242,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
+        <TextBox x:Name="textBox1" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="224"/>
+        <Button x:Name="button" Content="OK" FontSize="18" local:ButtonHelper.DialogResult="True"  HorizontalAlignment="Left" Margin="208,326,0,0" VerticalAlignment="Top" Width="112" />
+        <Button x:Name="button1" Content="Отмена" FontSize="18" IsCancel="True" HorizontalAlignment="Left" Margin="382,326,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="textBox2" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,236,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
+        <Label x:Name="label3" FontFamily="Consolas" FontSize="18" Content="Второй пилот" HorizontalAlignment="Left" Margin="101,118,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
+        <TextBox x:Name="textBox3" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,118,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
+        <Label x:Name="label4" FontFamily="Consolas" FontSize="18" Content="Главный бортпроводник" HorizontalAlignment="Left" Margin="12,180,0,0" VerticalAlignment="Top" Foreground="#DD000000"/>
+        <TextBox x:Name="textBox4" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="267,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
 
     </Grid>
 </Custom:MetroWindow>

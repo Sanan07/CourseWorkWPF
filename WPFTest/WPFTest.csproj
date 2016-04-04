@@ -90,15 +90,18 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Telerik.Windows.Controls, Version=2016.1.217.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
-    <Reference Include="Transitionals">
-      <HintPath>D:\RESOURCES\Programming\C#\WPF\Transitionals_1_2\Transitionals.dll</HintPath>
+    <Reference Include="Telerik.Windows.Controls, Version=2016.1.217.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFMessageBox">
+      <HintPath>D:\RESOURCES\Programming\C#\WPF\MessageBox\C#\WPFMessageBox\bin\Debug\WPFMessageBox.dll</HintPath>
+    </Reference>
     <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Infragistics.Themes.Office2010Blue.Wpf.1.0.0\lib\net40\WPFToolkit.dll</HintPath>
       <Private>True</Private>
@@ -122,6 +125,9 @@
       <DependentUpon>AddFlight.xaml</DependentUpon>
     </Compile>
     <Compile Include="ButtonHelper.cs" />
+    <Compile Include="Chart.xaml.cs">
+      <DependentUpon>Chart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EFClasses\AirPlane.cs" />
     <Compile Include="EFClasses\AirPlaneMaker.cs" />
     <Compile Include="EFClasses\Context.cs" />
@@ -150,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddFlight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Chart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\suit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

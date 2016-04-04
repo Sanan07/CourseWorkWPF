@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         
         IsMaxRestoreButtonEnabled="False"
-        Icon="../Icons/Plane3.png"
+        Icon="Icons/Plane3.png"
         ResizeMode="NoResize"
-    
+        
         Title="Новый самолет" Height="442.965" Width="528.097">
 
     <Grid HorizontalAlignment="Right"  Width="518">
@@ -24,7 +24,7 @@
         <Button x:Name="button2" Content="OK" FontSize="18" local:ButtonHelper.DialogResult="True"  HorizontalAlignment="Left" Margin="207,321,0,0" VerticalAlignment="Top" Width="112" />
         <Button x:Name="button3" Content="Отмена" FontSize="18" IsCancel="True" HorizontalAlignment="Left" Margin="382,321,0,0" VerticalAlignment="Top" Width="109"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" FontSize="15" Height="31" Margin="267,178,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
-        <Custom:NumericUpDown x:Name="numericUpDown2" FontSize="15" HorizontalAlignment="Left" Margin="267,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.057,-0.449" Width="224"/>
+        <Custom:NumericUpDown x:Name="numericUpDown2" Minimum="1" FontSize="15" HorizontalAlignment="Left" Margin="267,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.057,-0.449" Width="224"/>
 
     </Grid>
 </Custom:MetroWindow>

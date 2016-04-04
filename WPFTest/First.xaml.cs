@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
 namespace WPFTest
@@ -58,6 +48,8 @@ namespace WPFTest
                 /*Открываем выбраный Tabindex*/
                 Dispatcher.BeginInvoke((Action)(() => main.TabControl.SelectedIndex = i));
                 main.Show();
+                
+                
             }
             
         }
@@ -83,9 +75,12 @@ namespace WPFTest
             Close();
         }
 
-        private void tile3_MouseEnter(object sender, MouseEventArgs e)
+        private void tile4_Click(object sender, RoutedEventArgs e)
         {
-            
+            Chart chart = new Chart();
+            chart.Show();
+            Close();
+        
         }
     }
 }

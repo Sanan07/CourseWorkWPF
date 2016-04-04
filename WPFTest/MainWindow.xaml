@@ -10,10 +10,13 @@
         MinHeight="550"
         MinWidth="650"
         
+        Icon="Icons/Plane3.png"
         Title="Информационная система технического обслуживания"
         BorderThickness="0" 
         ResizeMode="CanResizeWithGrip"
         
+      
+    
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         
@@ -26,7 +29,7 @@
         TextOptions.TextRenderingMode="Auto"
         
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        WindowStartupLocation="CenterScreen" Icon="Icons/Plane3.png" Closing="MetroWindow_Closing">
+        WindowStartupLocation="CenterScreen"  Closing="MetroWindow_Closing">
 
 
     <Grid x:Name="LayoutRoot" Background="White">
@@ -73,7 +76,7 @@
                         <RowDefinition Height="0.1*"/>
                         <RowDefinition Height="0.9*"/>
                     </Grid.RowDefinitions>
-                    <DataGrid x:Name="dataGrid2" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Equipments}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
+                    <DataGrid x:Name="dataGrid2" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Airplanes}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ИД"/>
                             <DataGridTextColumn Binding="{Binding AirPlaneName}" Header="Название самолета"/>
@@ -101,7 +104,7 @@
                         <RowDefinition Height="0.1*"/>
                         <RowDefinition Height="0.9*"/>
                     </Grid.RowDefinitions>
-                    <DataGrid x:Name="dataGrid3" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Equipments}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
+                    <DataGrid x:Name="dataGrid3" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Flights}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ИД"/>
                             <DataGridTextColumn Binding="{Binding NameOfFlight}" Header="Название рейса"/>
@@ -130,10 +133,12 @@
                         <RowDefinition Height="0.1*"/>
                         <RowDefinition Height="0.9*"/>
                     </Grid.RowDefinitions>
-                    <DataGrid x:Name="dataGrid4" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Equipments}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
+                    <DataGrid x:Name="dataGrid4" Grid.Row="1" Grid.ColumnSpan="6" AutoGenerateColumns="False" ItemsSource="{Binding Source=Crews}"  IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ID}" Header="ИД"/>
                             <DataGridTextColumn Binding="{Binding HeadOfCrew}" Header="Капитан экипажа"/>
+                            <DataGridTextColumn Binding="{Binding SecondPilot}" Header="Второй пилот"/>
+                            <DataGridTextColumn Binding="{Binding HeadOfStuard}" Header="Главный бортпроводник"/>
                             <DataGridTextColumn Binding="{Binding Amount}" Header="Количество состава"/>
                       </DataGrid.Columns>
                     </DataGrid>
